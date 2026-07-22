@@ -155,9 +155,8 @@ warden-project/
 ├── README.md          ← this file (master overview)
 ├── LICENSE
 └── phase-08/
-    ├── README.md      ← the phase write-up
+    ├── README.md      ← full phase write-up: wins, challenges, learnings & key terms
     ├── data/          ← screenshots, configs, assets
-    └── reports/       ← detailed findings
 ```
 
 New phases are added as new folders (`phase-07`, `phase-06`, …) without touching
