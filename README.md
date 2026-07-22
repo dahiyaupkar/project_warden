@@ -146,6 +146,27 @@ This is a **home lab built to enterprise patterns** — a learning and portfolio
 
 ---
 
+## Repository Layout
+
+Each phase lives in its own numbered folder and is fully self-contained:
+
+```
+warden-project/
+├── README.md          ← this file (master overview)
+├── LICENSE
+└── phase-08/
+    ├── README.md      ← the phase write-up
+    ├── data/          ← screenshots, configs, assets
+    └── reports/       ← detailed findings
+```
+
+New phases are added as new folders (`phase-07`, `phase-06`, …) without touching
+existing work. Every phase README follows the same six-part format:
+**What Went Well · Challenges I Faced · Key Learnings · Improvements I Made ·
+Technical Skills Demonstrated · Terminologies**.
+
+---
+
 ## License
 
 Released under the **MIT License** — see [`LICENSE`](LICENSE) for details. You're welcome to learn from, adapt, or build on this work.
