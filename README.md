@@ -156,7 +156,7 @@ warden-project/
 ├── LICENSE
 └── phase-08/
     ├── README.md      ← full phase write-up: wins, challenges, learnings & key terms
-    ├── data/          ← screenshots, configs, assets
+    └── data/          ← screenshots, configs, assets
 ```
 
 New phases are added as new folders (`phase-07`, `phase-06`, …) without touching
