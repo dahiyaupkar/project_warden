@@ -29,8 +29,8 @@ Every phase is documented as a standalone, recruiter-readable case study explain
                         Internet
                            │
                   ┌────────┴────────┐
-                  │  Cloudflare      │  (Tunnel + Zero Trust — no open router ports)
-                  │  Zero Trust      │
+                  │  Cloudflare     │  (Tunnel + Zero Trust — no open router ports)
+                  │  Zero Trust     │
                   └────────┬────────┘
                            │
                      ┌─────┴─────┐
@@ -39,11 +39,11 @@ Every phase is documented as a standalone, recruiter-readable case study explain
                            │  isolated lab network
         ┌──────────────────┼──────────────────┐
         │                  │                  │
-   ┌────┴────┐       ┌─────┴─────┐      ┌──────┴──────┐
-   │ Jump box │       │  Wazuh    │      │  Attacker / │
-   │ (SSH     │       │  SIEM     │      │  Target VMs │
-   │  gateway)│       │           │      │ (Kali, etc.)│
-   └──────────┘       └───────────┘      └─────────────┘
+   ┌────┴────┐       ┌─────┴─────┐     ┌──────┴──────┐
+   │ Jump box │      │  Wazuh    │     │  Attacker / │
+   │ (SSH     │      │  SIEM     │     │  Target VMs │
+   │  gateway)│      │           │     │ (Kali, etc.)│
+   └──────────┘      └───────────┘     └─────────────┘
 
    Proxmox VE cluster: pve1 · pve2 · pve3 · pve4
    Quorum tie-breaker: Raspberry Pi QDevice (split-brain protection)
