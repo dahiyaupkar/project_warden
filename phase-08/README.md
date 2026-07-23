@@ -66,10 +66,7 @@
 > [!WARNING]
 > **The core setback:** while adding a QDevice, I couldn't cluster all the nodes together — and with no backups, the only workaround was reinstalling every node. I lost months of work and redid the entire project from scratch. The rebuild alone took weeks.
 
-<details>
-<summary><b>🧵 The full cluster error chain I worked through (click to expand)</b></summary>
-
-<br>
+**🧵 The full cluster error chain I worked through**
 
 | # | Error | Fix |
 |---|---|---|
@@ -82,8 +79,6 @@
 | 7 | **401 Unauthorized in the Web UI** after the clean | `systemctl restart pveproxy pve-cluster` |
 | 8 | **All VMs gone** after resetting `/etc/pve`, no vzdump backups | The moment that forced the full rebuild |
 
-</details>
-
 <div align="center">
 <img src="data/03-cluster-errors.png" width="800" alt="Cluster join / quorum errors during recovery"><br>
 <sub><i>Cluster join and quorum failures during recovery.</i></sub>
@@ -94,16 +89,11 @@
 <sub><i>400 too many arguments — resolved by <code>pvecm qdevice remove 192.X.X.X</code>.</i></sub>
 </div>
 
-<details>
-<summary><b>🔧 Off-site backup (GoodSync) troubleshooting (click to expand)</b></summary>
-
-<br>
+**🔧 Off-site backup (GoodSync) troubleshooting**
 
 - GoodSync's initial sync failed with a short-write error (`written less than requested for /tmp/gst_*.tmp`) — the Synology `/tmp` is a small 877MB RAM-backed tmpfs, too small to stage a 3.85GB archive under "Compress and Encrypt" mode
 - A systemd drop-in `TMPDIR` override didn't work — GoodSync ignored it
 - Old-mode encrypted `.gszip` debris left in the cloud target blocked clean re-syncs
-
-</details>
 
 <div align="center">
 <img src="data/05-goodsync-shortwrite-error.png" width="800" alt="GoodSync short-write error — written less than requested"><br>
