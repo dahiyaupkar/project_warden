@@ -49,11 +49,15 @@
 - Automated both backup legs: scheduled Proxmox vzdump (all VMs, Mon/Thu 01:00, 7 daily / 4 weekly / 3 monthly retention) plus off-site GoodSync replication to Google Drive with AES-256 client-side encryption
 - Closed the phase properly with a full restore test — proved the backup end-to-end rather than just configuring it
 
-![Successful test backup — TASK OK, 32GB to 3.59GB at ~174 MB/s](data/01-test-backup-task-ok.png)
-*Verification backup: 32GB VM → 3.59GB archive at ~174 MB/s, `TASK OK`.*
+<div align="center">
+<img src="data/01-test-backup-task-ok.png" width="800" alt="Successful test backup — TASK OK, 32GB to 3.59GB at ~174 MB/s"><br>
+<sub><i>Verification backup: 32GB VM → 3.59GB archive at ~174 MB/s, <code>TASK OK</code>.</i></sub>
+</div>
 
-![Scheduled Proxmox backup job — Mon/Thu, 7/4/3 retention](data/02-scheduled-backup-job.png)
-*Scheduled cluster-wide backup job — Mon/Thu 01:00, 7/4/3 retention.*
+<div align="center">
+<img src="data/02-scheduled-backup-job.png" width="800" alt="Scheduled Proxmox backup job — Mon/Thu, 7/4/3 retention"><br>
+<sub><i>Scheduled cluster-wide backup job — Mon/Thu 01:00, 7/4/3 retention.</i></sub>
+</div>
 
 ---
 
@@ -80,11 +84,15 @@
 
 </details>
 
-![Cluster join / quorum errors during recovery](data/03-cluster-errors.png)
-*Cluster join and quorum failures during recovery.*
+<div align="center">
+<img src="data/03-cluster-errors.png" width="800" alt="Cluster join / quorum errors during recovery"><br>
+<sub><i>Cluster join and quorum failures during recovery.</i></sub>
+</div>
 
-![QDevice remove "too many arguments"](data/04-toomanyargs.png)
-*400 too many arguments — resolved by `pvecm qdevice remove 192.X.X.X`.*
+<div align="center">
+<img src="data/04-toomanyargs.png" width="400" alt="QDevice remove &quot;too many arguments&quot;"><br>
+<sub><i>400 too many arguments — resolved by <code>pvecm qdevice remove 192.X.X.X</code>.</i></sub>
+</div>
 
 <details>
 <summary><b>🔧 Off-site backup (GoodSync) troubleshooting (click to expand)</b></summary>
@@ -97,8 +105,10 @@
 
 </details>
 
-![GoodSync short-write error — written less than requested](data/05-goodsync-shortwrite-error.png)
-*GoodSync short-write error — `/tmp` tmpfs too small to stage the archive.*
+<div align="center">
+<img src="data/05-goodsync-shortwrite-error.png" width="800" alt="GoodSync short-write error — written less than requested"><br>
+<sub><i>GoodSync short-write error — <code>/tmp</code> tmpfs too small to stage the archive.</i></sub>
+</div>
 
 ---
 
@@ -124,11 +134,15 @@
 - Reset the cloud target cleanly by clearing it and running Delete State Files → Sync Complete, 0 errors at 22.65 MB/s
 - Validate every backup with a real restore drill (restored jump box → VM 999 on a fresh VMID, network disconnected to avoid an IP conflict, booted, confirmed shell access and correct user identity, then destroyed the test VM)
 
-![GoodSync sync complete — 0 errors, 22.65 MB/s](data/06-goodsync-sync-complete.png)
-*Off-site sync complete — 0 errors at 22.65 MB/s.*
+<div align="center">
+<img src="data/06-goodsync-sync-complete.png" width="800" alt="GoodSync sync complete — 0 errors, 22.65 MB/s"><br>
+<sub><i>Off-site sync complete — 0 errors at 22.65 MB/s.</i></sub>
+</div>
 
-![Restore test — VM 999 booted with confirmed shell access](data/07-restore-test-vm999.png)
-*Restore test — VM 999 booted from backup with confirmed shell access, then destroyed.*
+<div align="center">
+<img src="data/07-restore-test-vm999.png" width="800" alt="Restore test — VM 999 booted with confirmed shell access"><br>
+<sub><i>Restore test — VM 999 booted from backup with confirmed shell access, then destroyed.</i></sub>
+</div>
 
 ---
 
